@@ -24,7 +24,7 @@ def jump_to_source_code(info: LazyCallerInfo, config):
     ]
 
     try:
-        subprocess.Popen(command, shell=True)
+        subprocess.Popen(command, shell=False)  # Changed shell=True to shell=False
     except subprocess.CalledProcessError as e:
         print(f"Error opening file in VSCode: {e}")
     except FileNotFoundError:
